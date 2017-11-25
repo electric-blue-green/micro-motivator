@@ -1,8 +1,5 @@
-# Add your Python code here. E.g.
 from microbit import *
 import random
-
-
 def convert_time(running_time):
     millis = running_time()
     seconds = (millis / 1000) % 60
@@ -13,13 +10,10 @@ def convert_time(running_time):
     display.scroll("Working for: %d:%d:%d" % (hours, minutes, seconds))
     if millis < 3600000:
         display.scroll("Back To Work!!")
-
-
 while True:
     if button_a.is_pressed():
         convert_time(running_time)
-
-quote_array = ["If you want to achieve greatness stop asking for permission.",
+    quote_array = ["If you want to achieve greatness stop asking for permission.",
                "Things work out best for those who make the best of how things work out.",
                "To live a creative life, we must lose our fear of being wrong.",
                "If you are not willing to risk the usual you will have to settle for the ordinary.",
@@ -35,7 +29,5 @@ quote_array = ["If you want to achieve greatness stop asking for permission.",
                "Opportunities don't happen, you create them.",
                "Try not to become a person of success, but rather try to become a person of value.",
                "Keep Calm and Carry On"]
-
-while True:
     if button_b.is_pressed():
         display.scroll(random.choice(quote_array))
